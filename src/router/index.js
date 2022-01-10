@@ -1,29 +1,65 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue"
+import Router from "vue-router"
+Vue.use(Router)
 
-Vue.use(VueRouter)
+const ColdJoke = ()=> import("views/coldJoke")
+const FunnySentence =()=> import("views/funnySentence")
+const HilariousReply = ()=> import("views/hilariousReply")
+const JokeCareer =()=>import("views/jokecareer")
+const JokeChild = ()=>import("views/jokechild")
+const JokeEglish = ()=>import("views/jokeeglish")
+const JokeFamily =()=>import("views/jokefamily")
+const JokeLove =()=>import("views/jokelove")
+const JokeSchool=()=>import("views/jokeschool")
+const DetailJoke=()=>import("views/DetailJoke")
 
-const routes = [
+const routes=[
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path:"",
+    redirect: '/cold-joke'
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path:"/cold-joke",
+    component:ColdJoke
+  },
+  {
+    path:"/funny-sentence",
+    component:FunnySentence
+  },
+  {
+    path:"/hilarious-reply",
+    component:HilariousReply
+  },
+  {
+    path:"/joke-career",
+    component:JokeCareer
+  },
+  {
+    path:"/joke-child",
+    component:JokeChild
+  },
+  {
+    path:"/joke-eglish",
+    component:JokeEglish
+  },
+  {
+    path:"/joke-family",
+    component:JokeFamily
+  },
+  {
+    path:"/joke-love",
+    component:JokeLove
+  },
+  {
+    path:"/joke-school",
+    component:JokeSchool
+  },{
+    path:"/detail-joke",
+    component:DetailJoke
   }
 ]
-
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+export default new Router({
+  // mode:"history",
   routes
 })
 
-export default router

@@ -1,8 +1,9 @@
 <template>
-  <Scroll class="scroll">
-    <div v-if='joke'>
+  <!-- <Scroll class="scroll" > -->
+    <div class="scroll">
+      <div v-if='joke'>
     <h2>{{joke.title}}</h2>
-    <div v-html="joke.content">
+    <div v-html="joke.content" >
      
     </div>
     
@@ -12,7 +13,8 @@
     我是有底线的(●'◡'●)<br/>
     (该类笑话没有啦)
     </div>
-  </Scroll>
+    </div>
+  <!-- </Scroll> -->
 </template>
 
 <script>
@@ -23,7 +25,8 @@ export default {
     return {
       joke:{},
       id:1,
-      type:null
+      type:null,
+      style:{overflow:"auto"}
     }
   },
   mounted () {
@@ -60,8 +63,8 @@ export default {
   position: absolute;
   top:8vh;
   left:100px;
-  right:0px;
+  right:4px;
   bottom: 0px;
-  overflow: hidden;
+  overflow: auto;
 }
 </style>

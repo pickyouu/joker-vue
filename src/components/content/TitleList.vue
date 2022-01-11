@@ -1,8 +1,11 @@
 <template>
   <div>
+    <div v-if="titles.length">
     <div :key="item.id+item.title" v-for="item in titles" class="title" @click="itemClick(item.id)">
       {{item.title}}
     </div>
+  </div>
+  <div v-else>loading...</div>
   </div>
 </template>
 
